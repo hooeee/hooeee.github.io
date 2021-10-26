@@ -1,0 +1,53 @@
+.bingo_img{
+    background-image: url('./img/bingo.png');
+    background-position: center;
+    background-size: contain;
+}
+
+.boom_img{
+    background-image: url('./img/boom.png');
+    background-position: center;
+    background-size: contain;
+}
+
+.bomb{
+    background-image: url('./img/boom.png');
+    background-position: center;
+    background-size: contain;
+}
+
+
+.board_height_transition {
+    transition: margin 1s;
+}
+
+.board_viewer{
+    transition: transform 1s;
+}
+.board_view_mode_nomal{
+}
+.board_view_mode_rotate{
+    transform: rotate(-45deg);
+}
+.board_view_mode_3d{
+    transform: perspective(1067px) rotateZ(301deg) rotateX(39deg) rotateY(49deg) scale(1.2);
+}
+
+
+.board_view_mode_rotate_top{ margin-top: 180px; }
+.board_view_mode_nomal_top{ margin-top: 150px; }
+.board_view_mode_3d_top{ margin-top: 150px; }
+
+html{
+    background: #1f0b2e;
+}
+
+body, html{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0px ;
+}
+
+.font-white ,.font-white * { color: #fff !important;}
+.font-yello ,.font-yello * { color: #ff0 !important;}
