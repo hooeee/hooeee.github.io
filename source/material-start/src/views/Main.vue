@@ -4,38 +4,44 @@
             <span class="title">Coha Application Site Link</span>
         </div>
         <div class="spliter"></div>
-        <div class="section"  v-for="(value, indx) in menus" v-bind:key="indx">
-            <a v-bind:href="value.link">
-                <v-btn elevation="2">{{value.title}}</v-btn>
+        <div class="section" v-for="(value, indx) in menus" v-bind:key="indx">
+            <a v-if="value.link != ''" v-bind:href="value.link" target="_blank">
+                <v-btn elevation="2">{{ value.title }}</v-btn>
             </a>
+            <v-btn v-else elevation="2" v-on:click="alert">{{ value.title }}</v-btn>
         </div>
     </div>
 </template>
 
 <script>
-import menu from '../data/menu';
+import menu from "../data/menu";
 export default {
-    data () {
+    data() {
         return {
-            menus : []
-        }
+            menus: [],
+        };
     },
     mounted() {
-        this.menus=menu;
+        this.menus = menu;
     },
-}
+    methods: {
+        alert() {
+            alert("준비중 입니다");
+        },
+    },
+};
 </script>
 
 <style scoped>
-.spliter{
+.spliter {
     margin: 15px;
 }
-.wrap { 
+.wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.section { 
+.section {
     padding-top: 10px;
     padding-bottom: 10px;
     width: 100%;
@@ -51,10 +57,10 @@ export default {
 button {
     text-transform: none;
 }
-a{
+a {
     text-decoration: none;
 }
-.title { 
+.title {
     font-weight: bold;
     font-size: 2em;
     color: white;
